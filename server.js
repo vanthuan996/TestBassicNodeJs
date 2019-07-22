@@ -59,8 +59,11 @@
 // })
 
 var express = require('express');
+var bodyParser = require('body-parser')
 
 var app = express();
+
+var urlphantich = bodyParser.urlencoded({extended: false})
 
 app.set('view engine', 'ejs');
 
@@ -103,8 +106,12 @@ app.get('/register', function (req, res) { //:userId
 // });
 
 app.get('/contact', function (req, res) {
-  console.log(req.query);
-  res.render('contact', {data: req.query});
+  res.render('contact');
+});
+
+app.post('/contact', urlphantich, function (req, res) {
+  console.log(req.body);
+  res.render('contact-success', {data: req.body});
 
 });
 

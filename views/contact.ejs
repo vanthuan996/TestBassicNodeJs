@@ -13,10 +13,16 @@
     <% include partials/navbar.ejs %>
     <h1>Welcome to my website</h1>
     <p>I want to do CONTACT</p>
-    <form action="" id="contact-form">
-        <label for="who"> </label>
-    </form>
-    <%%>
-</body>
 
+
+    <form action="" id="contact-form" method="post">
+        <label for="who">Who do you want to contact ? </label><br>
+        <input type="text" name="who" placeholder="Name...."><br>
+        <label for="department">Which department ? </label><br>
+        <input type="text" name="department" placeholder="Department"><br>
+        <label for="email">Your email </label><br>
+        <input type="email" name="email" placeholder="Your email..."><br>
+        <input type="submit" value="Send"><br>
+    </form>
+</body>
 </html>
